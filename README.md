@@ -1,3 +1,9 @@
+# React API project
+
+React API project that uses [PokeAPI](https://pokeapi.co "PokeAPI")
+
+![Screenshot](screen.png "Screenshot")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

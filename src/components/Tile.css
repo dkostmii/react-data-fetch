@@ -1,0 +1,122 @@
+:root {
+  --tile-size: 156px;
+  --title-height: 44px;
+  --round: 16px;
+  --hover-color: #EF5350;
+}
+
+.tile {
+  min-width: var(--tile-size);
+  min-height: var(--tile-size);
+
+  position: relative; 
+  background: #EEEEEE;
+  width: var(--tile-size); 
+  height: var(--tile-size);
+  border-radius: var(--round);
+
+  box-shadow: 0 16px 12px -8px #AAA;
+    
+  cursor: pointer;
+  filter: brightness(0.92);
+
+  transition: 0.2s ease-out;
+}
+
+.tile-selected {
+  box-shadow: 0 20px 24px -4px #A9A9A9;
+  filter: brightness(0.98);
+  z-index: 1;
+}
+
+.tile-selected > .tile-title-container {
+  background: var(--hover-color);
+  color: #EEEEEE;
+}
+
+
+.tile:hover:not(.tile-empty){
+  box-shadow: 0 20px 24px -4px #A9A9A9;
+  filter: brightness(0.98);
+}
+
+.tile:hover:not(.tile-empty) > .tile-title-container {
+  background: var(--hover-color);
+  color: #EEEEEE;
+}
+
+.tile-empty {
+  background: #989898;
+  box-shadow: none;
+  cursor: default;
+
+}
+
+.tile-pic {
+
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  filter: brightness(0.96);
+  border-radius: inherit;
+
+  opacity :0;
+  transition: 0.4s ease-in-out;
+}
+
+.tile-title-container {
+  margin: 0;
+  padding: 4px 12px;
+  box-sizing: border-box;
+
+  position: absolute;
+  background: #EEEEEE;
+  width: var(--tile-size);
+  height: var(--title-height);
+  
+
+  border-radius: 0 0 var(--round) var(--round);
+  z-index: 1;
+  box-shadow: 0 -8px 8px -4px #CCCCCC80;
+  top: calc(var(--tile-size) - var(--title-height));
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  transition: inherit;
+}
+
+.tile-empty > .tile-title-container {
+  box-shadow: none;
+}
+
+.tile-title-container > .tile-caption {
+  transition: inherit;
+  font-size: 16pt;
+  margin: inherit;
+  user-select: none;
+  -moz-user-select: none;
+}
+
+.tile-title-container > .tile-description {
+  font-size: 10pt;
+  font-weight: 300;
+  line-height: 10pt;
+  margin: inherit;
+  opacity: 0;
+  transition: inherit;
+}
+
+.tile-caption-placeholder {
+  margin: 0 0 2px 16px;
+  height: 10pt;
+  width: 76px;
+  background: #BBBBBB;
+}
+.loading-caption {
+  user-select: none;
+  -moz-user-select: none;
+}
+
